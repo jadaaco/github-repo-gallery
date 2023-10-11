@@ -101,5 +101,14 @@ const displayRepoInfo = function (repoInfo, languages) {
       <p>Languages: ${languages.join(", ")}</p>
       <a class="visit" href="${repoInfo.html_url}" target="_blank" rel="noreferrer noopener">View Repo on GitHub!</a>`;
     repoData.append(div);
+
+    // added "back to repo gallery" button
+    backToRepoButton.classList.remove("hide");
 };
 
+// "back to repo gallery" button click event
+backToRepoButton.addEventListener("click", function () {
+    allReposContainer.classList.remove("hide");
+    repoData.classList.add("hide");
+    backToRepoButton.classList.add("hide");
+});
